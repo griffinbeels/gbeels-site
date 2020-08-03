@@ -1,0 +1,35 @@
+mixin projectIcon(imageName)
+  .col-md-6.col-lg-4.mb-5
+    .portfolio-item.mx-auto(data-toggle='modal', data-target='##{imageName}')
+      .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+        .portfolio-item-caption-content.text-center.text-white
+          i.fas.fa-plus.fa-3x
+      img.img-fluid(src='assets/img/portfolio/#{imageName}.png', alt='#{imageName}')
+
+mixin projectPopup(projectName, imageName, projectDescription)
+  div(id="#{imageName}").portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='#{imageName}Label', aria-hidden='true')
+        .modal-dialog.modal-xl(role='document')
+          .modal-content
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true')
+                i.fas.fa-times
+            .modal-body.text-center
+              .container
+                .row.justify-content-center
+                  .col-lg-8
+                    // Portfolio Modal - Title
+                    h2.portfolio-modal-title.text-secondary.mb-0 #{projectName}
+                    // Icon Divider
+                    .divider-custom
+                      .divider-custom-line
+                      .divider-custom-icon
+                        img.img-fluid(src='assets/img/gb_transparent.png', alt='gb')
+                      .divider-custom-line
+                    // Portfolio Modal - Image
+                    img.img-fluid.rounded.mb-5(src='assets/img/portfolio/#{imageName}.png', alt='#{imageName}')
+                    // Portfolio Modal - Text
+                    p.mb-5
+                      | #{projectDescription}
+                    button.btn.btn-primary(href='#', data-dismiss='modal')
+                      i.fas.fa-times.fa-fw
+                      | Close Project Description

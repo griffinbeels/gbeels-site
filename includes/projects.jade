@@ -1,0 +1,34 @@
+include ../includes/mixins
+// BEGIN PROJECTS
+section#portfolio.page-section.portfolio
+  .container
+    // Projects Section Heading
+    .text-center
+      h2.page-section-heading.text-secondary.mb-0.d-inline-block Projects
+    // Icon Divider
+    .divider-custom
+      .divider-custom-line
+      .divider-custom-icon
+        img.img-fluid(src='assets/img/gb_transparent.png', alt='gb')
+      .divider-custom-line
+    // Project Grid Items
+    .row.justify-content-center
+      // Project Items
+      +projectIcon("amazon")
+      +projectIcon("massdigi")
+      +projectIcon("best")
+      +projectIcon("computer_vision")
+      +projectIcon("raft")
+      +projectIcon("ray")
+      +projectIcon("twitchmatch")
+      +projectIcon("shell")
+
++projectPopup("Amazon SDE Internship", "amazon", "Great internship!")
++projectPopup("MassDiGI Software Engineer Internship", "massdigi", "Great internship!")
++projectPopup("Brown Esports President", "best", "todo ")
++projectPopup("Emotion Based Dog Filter", "computer_vision", "todo: dog filter")
++projectPopup("Raft Consensus Project", "raft", "Great internship!")
++projectPopup("Ray Tracer in C++", "ray", "Great internship!")
++projectPopup("Twitch Match", "twitchmatch", "Great internship!")
++projectPopup("Shell", "shell", "Great internship!")
+// END PROJECTS
