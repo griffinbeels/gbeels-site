@@ -3,7 +3,7 @@ mixin projectIcon(imageName)
     .portfolio-item.mx-auto(data-toggle='modal', data-target='##{imageName}', id="#{imageName}Icon")
       .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
         .portfolio-item-caption-content.text-center.text-white
-          i.fas.fa-info-circle.fa-3x
+          i.fas.fa-info-circle.fa-3x.projectButton
       img.img-fluid(src='assets/img/portfolio/#{imageName}.png', alt='#{imageName}')
 
 mixin projectPopup(projectName, imageName, projectDescription)
