@@ -6,7 +6,7 @@ mixin projectIcon(imageName)
           i.fas.fa-info-circle.fa-3x.projectButton
       img.img-fluid(src='assets/img/portfolio/#{imageName}.png', alt='#{imageName}')
 
-mixin projectPopup(projectName, imageName, projectDescription)
+mixin projectPopup(projectName, imageName, context, location, projectBullets, projectLinksInfo)
   div(id="#{imageName}", tabindex='-1', role='dialog', aria-labelledby='#{imageName}Label', aria-hidden='true').portfolio-modal.modal.fade()
         .modal-dialog.modal-xl(role='document')
           .modal-content
@@ -17,7 +17,7 @@ mixin projectPopup(projectName, imageName, projectDescription)
               .container
                 .row.justify-content-center
                   .col-lg-8
-                    // Portfolio Modal - Title
+                    // Portfolio Model - Title
                     h2.portfolio-modal-title.text-secondary.mb-0 #{projectName}
                     // Icon Divider
                     .divider-custom
@@ -25,11 +25,33 @@ mixin projectPopup(projectName, imageName, projectDescription)
                       .divider-custom-icon
                         img.img-fluid(src='assets/img/gb_transparent.png', alt='gb')
                       .divider-custom-line
-                    // Portfolio Modal - Image
+
+                    // Portfolio Model - Image
                     img.img-fluid.rounded.mb-5(src='assets/img/portfolio/#{imageName}.png', alt='#{imageName}')
-                    // Portfolio Modal - Text
-                    p.mb-5
-                      | #{projectDescription}
+
+                    // Portfolio Model - Company & Location
+                    p.mb-3
+                      strong #{context}
+                      |  - 
+                      i #{location}
+
+                    // Portfolio Model - Text
+                    each bullet in projectBullets
+                      p.mb-3.text-left
+                        | • #{bullet}
+                    
+                    // Project link button
+                    - var index = 0;
+                    if projectLinksInfo
+                      // Loop over each project link / button description
+                      while index < projectLinksInfo.length
+                        p
+                          button.btn.btn-primary(onclick="window.open('#{projectLinksInfo[index]}', '_blank');")
+                            i.fas.fa-link.fa-fw
+                            | #{projectLinksInfo[index + 1]}
+                        - index += 2;
+
+                    // Exit button
                     button.btn.btn-primary(href='#', data-dismiss='modal')
                       i.fas.fa-times.fa-fw
                       | Close Project Description
