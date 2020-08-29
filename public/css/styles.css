@@ -5396,7 +5396,7 @@ a.close.disabled {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: rgb(0, 0, 0);
   background-clip: padding-box;
   border: 0 solid rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
@@ -5995,7 +5995,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #1f2d41 !important;
+  background-color: #0a0a0a !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -6005,13 +6005,17 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #00cfd5 !important;
+  background-color: #ffffff !important;
+}
+
+.bg-navbar {
+  background-color: #01c414 !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #009da2 !important;
+  background-color: #00c914 !important;
 }
 
 .bg-success {
@@ -9674,19 +9678,19 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #1f2d41 !important;
+  color: #f0f0f0 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #06090d !important;
+  color: #cecece !important;
 }
 
 .text-secondary {
-  color: #00cfd5 !important;
+  color: #01c414 !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #008589 !important;
+  color: #383838 !important;
 }
 
 .text-success {
@@ -10077,7 +10081,7 @@ h3 {
   top: 1rem;
   font-size: 3rem;
   line-height: 3rem;
-  color: #1f2d41;
+  color: #33ff00;
   opacity: 1;
 }
 
@@ -10180,4 +10184,8 @@ form .row:first-child .floating-label-form-group {
 
 .btn-social {
   margin-bottom: 0.5rem;
+}
+
+.background-primary {
+
 }

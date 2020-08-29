@@ -18,7 +18,7 @@ mixin projectPopup(projectName, imageName, context, location, projectBullets, pr
                 .row.justify-content-center
                   .col-lg-8
                     // Portfolio Model - Title
-                    h2.portfolio-modal-title.text-secondary.mb-0 #{projectName}
+                    h2.portfolio-modal-title.text-primary.mb-0 #{projectName}
                     // Icon Divider
                     .divider-custom
                       .divider-custom-line
@@ -30,14 +30,14 @@ mixin projectPopup(projectName, imageName, context, location, projectBullets, pr
                     img.img-fluid.rounded.mb-5(src='assets/img/portfolio/#{imageName}.png', alt='#{imageName}')
 
                     // Portfolio Model - Company & Location
-                    p.mb-3
+                    p.mb-3.text-secondary
                       strong #{context}
                       |  - 
                       i #{location}
 
                     // Portfolio Model - Text
                     each bullet in projectBullets
-                      p.mb-3.text-left
+                      p.mb-3.text-left.text-primary
                         | • #{bullet}
                     
                     // Project link button
